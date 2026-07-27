@@ -1,0 +1,18 @@
+.dome-background {
+  position: absolute;
+  left: 50%;
+  top: 210px;
+  transform: translateX(calc(-50% - 28px));
+  width: 2036px;
+  height: 3531px;
+  max-width: none;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (max-width: 1200px) {
+  .dome-background {
+    width: 180vw;
+    height: calc(180vw * 3531 / 2036);
+  }
+}
