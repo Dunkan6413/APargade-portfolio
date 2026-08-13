@@ -1,6 +1,6 @@
 import React from "react";
 import "./pagesCSS/About.css";
-import separation from "../assets/separationLine.svg";
+import separation from "../assets/Rectangle 82.svg";
 
 export default function About() {
   return (
