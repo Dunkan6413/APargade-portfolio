@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./pagesCSS/Contact.css";
 
 export default function Contact() {
+  const [nom, setNom] = useState('');
+  const [prenom, setPrenom] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
   // TODO : Envoyer un mail de notification PAR message reçu sur le dashboard admin
   async function handleSubmit(e) {
     e.preventDefault();
@@ -17,28 +22,28 @@ export default function Contact() {
           <input
             id="nom"
             type="text"
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={(e) => setNom(e.target.value)}
             required
           />
           <label htmlFor="prenom">Prénom</label>
           <input
             id="prenom"
             type="email"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setPrenom(e.target.value)}
             required
           />
           <label htmlFor="email">Email</label>
           <input
             id="email"
             type="text"
-            onChange={(e) => setFirst_name(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
           <label htmlFor="message">Message</label>
           <textarea
             id="message"
             type="text"
-            onChange={(e) => setLast_name(e.target.value)}
+            onChange={(e) => setMessage(e.target.value)}
             required
           />
 
