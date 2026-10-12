@@ -1,30 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./pagesCSS/Home.css";
 import logo from "../assets/Ang-Hell logo.svg";
+import signature from "../assets/Ang-Hell logo.svg";
 import separation from "../assets/Rectangle 82.svg";
 import avatar from "../assets/pdp.png";
 import ribbon from "../assets/Group 30.svg";
-import {
-  FaInstagram,
-  FaLinkedinIn,
-  FaBehance,
-  FaYoutube,
-} from "react-icons/fa";
 import AnimatedLayout from "../components/AnimatedLayout";
+import SocialLinks from "../components/SocialLinks";
 
-const socialLinks = [
-  {
-    icon: FaInstagram,
-    url: "https://www.instagram.com/ang__hell/",
-    label: "Instagram",
-  },
-  {
-    icon: FaLinkedinIn,
-    url: "https://linkedin.com/in/tonprofil",
-    label: "LinkedIn",
-  },
-  { icon: FaBehance, url: "https://behance.net/tonprofil", label: "Behance" },
-  { icon: FaYoutube, url: "https://youtube.com/@tonprofil", label: "YouTube" },
+// Pour remplir un cadre : importer l'image, puis la passer dans `image`.
+// ex: import illustration from "../assets/presta-illustration.png";
+//     { title: "Illustration", image: illustration, ... }
+const prestations = [
+  { title: "Illustration", image: null, alt: "Exemple d'illustration" },
+  { title: "Graphisme", image: null, alt: "Exemple de graphisme" },
+  { title: "Animation", image: null, alt: "Exemple d'animation" },
 ];
 
 export default function Home() {
@@ -38,16 +29,12 @@ export default function Home() {
             Animation 2D · Illustration · Graphisme
           </p>
 
-          <ul className="home-social">
-            {socialLinks.map(({ icon: Icon, url, label }) => (
-              <li key={label}>
-                <a href={url} target="_blank" aria-label={label}>
-                  <Icon />
-                </a>
-              </li>
-            ))}
-          </ul>
+          <SocialLinks
+            names={["instagram", "linkedin", "behance", "youtube"]}
+            className="home-social"
+          />
         </section>
+
         <section className="home-separator">
           <img
             src={separation}
@@ -55,13 +42,14 @@ export default function Home() {
             className="home-separate"
           />
         </section>
+
         <section className="home-about-section">
           <div className="home-about-left">
             <h2 className="home-about-title">Qui suis-je ?</h2>
             <img src={avatar} alt="" className="home-about-avatar" />
-            <a href="/about" className="home-about-button">
+            <Link to="/about" className="home-about-button">
               À propos
-            </a>
+            </Link>
           </div>
 
           <div className="home-about-right">
@@ -89,9 +77,32 @@ export default function Home() {
                 cohérence visuelle, je propose la définition d'une identité
                 graphique propre à leurs besoins.
               </p>
-              <p className="home-about-signature">_Ang-Hell</p>
+
+              <div className="home-about-footer">
+                <p className="home-about-signature">Ang-Hell</p>
+                {/* <img src={signature} alt="Signature AngHell" className="whoAmI_signature" /> */}
+              </div>
             </div>
           </div>
+        </section>
+
+        <section className="home-presta-section">
+          <h2 className="home-presta-title">Prestations</h2>
+
+          <ul className="home-presta-list">
+            {prestations.map(({ title, image, alt }) => (
+              <li key={title} className="home-presta-card">
+                <div
+                  className={`home-presta-frame${image ? "" : " is-empty"}`}
+                >
+                  {image && <img src={image} alt={alt} />}
+                </div>
+                <Link to="/prestation" className="home-presta-button">
+                  {title}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </section>
       </div>
     </AnimatedLayout>
