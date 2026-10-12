@@ -1,29 +1,49 @@
+/* Hero */
 .about-hero {
+  position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: top;
+  align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: 20px;
+  min-height: 62vh;
   text-align: center;
-  padding-top: 30vh;
+  padding: 0 24px;
 }
 
 .about-catchphrase {
+  margin: 0;
+  max-width: 18em;
   font-family: "Inter", sans-serif;
-  font-weight: 300;
-  font-size: 3.5em;
   font-style: italic;
-  color: #f7c63f;
+  font-weight: 300;
+  font-size: clamp(1.8rem, 3.2vw, 3rem);
+  line-height: 1.3;
+  color: #f5d78e;
 }
 
 .about-tagline {
   margin: 0;
   color: #f0b26b;
-  font-size: 1.5rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   font-family: "Manrope", sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+}
+
+.about-arrow {
+  width: 0;
+  height: 0;
+  margin-top: 28px;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-top: 13px solid #f0b26b;
+}
+
+.about-separator {
+  margin-top: 3em;
+  display: flex;
+  justify-content: center;
 }
 
 .about-separate {
@@ -31,8 +51,390 @@
   height: 7em;
 }
 
-.about-separator {
-  margin-top: 15em;
+/* Pseudo */
+.about-pseudo {
+  position: relative;
+  z-index: 1;
+  margin: 5vw auto 0;
+  padding: 0 24px;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: #f0b26b;
+}
+
+/* Éléments communs */
+.about-title {
+  width: fit-content;
+  margin: 0;
+  padding-bottom: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #f5c451;
+  border-bottom: 3px solid #f5c451;
+}
+
+.about-button {
+  display: inline-block;
+  padding: 8px 28px;
+  background: #e8934a;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1b2a4a;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.about-button:hover {
+  background: #f5a95f;
+  transform: translateY(-2px);
+}
+
+/* Cadre d'image : gris tant qu'il est vide */
+.about-frame {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.about-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-frame.is-empty {
+  background: #8a8a8a;
+}
+
+/* Image de fond d'un ruban : un seul cadre qui couvre tout l'intérieur,
+   avec une opacité dégressive de gauche à droite.
+   --bg-start = opacité à gauche, --bg-end = opacité à droite (0 = invisible). */
+.about-bg {
+  --bg-start: 0.6;
+  --bg-end: 0;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: auto;
+  height: auto;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, var(--bg-start)),
+    rgba(0, 0, 0, var(--bg-end))
+  );
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, var(--bg-start)),
+    rgba(0, 0, 0, var(--bg-end))
+  );
+}
+
+/* Ruban décoratif en CSS (mêmes couleurs et décalage que Group 30.svg).
+   Il se dimensionne avec la variable --h (hauteur) définie par la section. */
+.about-ribbon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--h);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-ribbon::before,
+.about-ribbon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: calc(var(--h) * 0.862);
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: calc(var(--h) * 0.0955) calc(var(--h) * 0.0246);
+  border-radius: 999px;
+}
+
+.about-ribbon::before {
+  top: calc(var(--h) * 0.138);
+  border-color: #f29a41;
+}
+
+.about-ribbon::after {
+  top: 0;
+  border-color: #d96033;
+}
+
+/* Ruban 1 : histoire */
+.about-story {
+  --w: min(1100px, 92vw);
+  --h: calc(var(--w) * 0.53);
+  position: relative;
+  z-index: 1;
+  width: var(--w);
+  height: var(--h);
+  margin: 7vw auto;
+}
+
+.about-story-inner {
+  position: absolute;
+  z-index: 1;
+  top: calc(var(--h) * 0.25);
+  height: calc(var(--h) * 0.5);
+  left: calc(var(--h) * 0.06);
+  right: calc(var(--h) * 0.06);
   display: flex;
-  justify-content: center;
+  align-items: stretch;
+  border-radius: 999px;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(0.62rem, 1.05vw, 0.9rem);
+  line-height: 1.6;
+  color: #f0b26b;
+}
+
+.about-story-text {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  margin-left: 46%;
+  padding: 1em 2em;
+  border-left: 3px solid #e8934a;
+}
+
+.about-story-text p {
+  margin: 0 0 1em;
+}
+
+.about-story-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Diplômes */
+.about-diplomas {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 3rem;
+  align-items: center;
+  width: min(780px, 86%);
+  margin: 0 auto;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #f0b26b;
+}
+
+.about-diplomas .about-title {
+  justify-self: center;
+}
+
+.about-diplomas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin: 0;
+  padding: 0.5rem 0 0.5rem 2.5rem;
+  list-style: none;
+  border-left: 3px solid #e8934a;
+}
+
+.about-diplomas-list li {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-diplomas-list strong {
+  color: #ffffff;
+}
+
+/* Ruban 2 : approche (déborde à gauche) */
+.about-approach {
+  --h: clamp(260px, 38vw, 640px);
+  position: relative;
+  z-index: 1;
+  width: 80%;
+  height: var(--h);
+  margin: 8vw 0;
+  overflow: hidden;
+}
+
+.about-approach .about-ribbon {
+  left: auto;
+  right: 6%;
+  width: 125%;
+}
+
+.about-approach-inner {
+  position: absolute;
+  z-index: 1;
+  top: calc(var(--h) * 0.25);
+  height: calc(var(--h) * 0.5);
+  left: 0;
+  right: calc(6% + var(--h) * 0.06);
+  display: flex;
+  align-items: center;
+  gap: 2.5em;
+  padding-left: 22%;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(0.62rem, 1.05vw, 0.9rem);
+  line-height: 1.6;
+  color: #f0b26b;
+}
+
+.about-approach .about-bg {
+  border-radius: 0 999px 999px 0;
+}
+
+.about-approach-text {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  max-width: 34em;
+  margin: 0;
+}
+
+.about-approach-inner .about-button {
+  position: relative;
+  z-index: 1;
+  margin-left: auto;
+}
+
+/* Mon univers */
+.about-universe {
+  position: relative;
+  z-index: 1;
+  width: min(1000px, 86%);
+  margin: 0 auto 8vw;
+}
+
+.about-universe-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 4rem;
+}
+
+.about-feature {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #f0b26b;
+}
+
+.about-feature.is-reversed {
+  grid-template-columns: 1.2fr 1fr;
+}
+
+.about-feature-text p {
+  margin: 0 0 1em;
+}
+
+.about-feature-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-feature-text strong {
+  color: #ffffff;
+}
+
+.about-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.about-figure .about-frame {
+  width: 240px;
+  height: 300px;
+  border-radius: 24px;
+}
+
+.about-figure .about-frame img {
+  object-fit: contain;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+  .about-story,
+  .about-approach {
+    height: auto;
+    width: 100%;
+    margin: 56px 0;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+
+  .about-ribbon {
+    display: none;
+  }
+
+  .about-story-inner,
+  .about-approach-inner {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    height: auto;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 24px;
+    border-radius: 24px;
+    overflow: hidden;
+    font-size: 0.9rem;
+  }
+
+  .about-approach .about-bg {
+    border-radius: 0;
+  }
+
+  .about-story-text {
+    margin-left: 0;
+    padding: 0 0 0 1em;
+  }
+
+  .about-approach-inner .about-button {
+    margin: 0 auto;
+  }
+
+  .about-diplomas {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-diplomas-list {
+    padding-left: 1.5rem;
+  }
+
+  .about-universe-head {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .about-feature,
+  .about-feature.is-reversed {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .about-feature.is-reversed .about-figure {
+    order: -1;
+  }
 }
