@@ -7,6 +7,7 @@ import Portfolio from './pages/Portfolio'
 import Contact from './pages/Contact'
 import Dashboard from './pages/Dashboard'
 import Login from './pages/Login'
+import Register from './pages/Register';
 import Layout from './assets/Layout'
 import './App.css'
 
@@ -24,6 +25,7 @@ function App() {
           <Route path='/contact' element={<Contact/>} />
           <Route path='/admin' element={<Dashboard/>} />
           <Route path='/login' element={<Login/>} />
+          <Route path='/register' element={<Register/>} />
           </Route>
         </Routes>
       </BrowserRouter>
