@@ -9,6 +9,7 @@ import Dashboard from './pages/Dashboard'
 import Login from './pages/Login'
 import Register from './pages/Register';
 import Layout from './assets/Layout'
+import AddPortfolio from './pages/AddPortfolio';
 import './App.css'
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path='/admin' element={<Dashboard/>} />
           <Route path='/login' element={<Login/>} />
           <Route path='/register' element={<Register/>} />
+          <Route path='/addPortfolio' element={<AddPortfolio/>} />
           </Route>
         </Routes>
       </BrowserRouter>

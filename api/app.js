@@ -17,10 +17,12 @@ app.use(
 app.use("/uploads", express.static("uploads"));
 
 // API route imports
-const userRoute = require("./routes/user.route");
+const authRoute = require("./routes/auth.route");
+const portfolioRoute = require("./routes/portfolio.route");
 
 // API route definition
-app.use("/user", userRoute);
+app.use("/user", authRoute);
+app.use("/port", portfolioRoute);
 
 const PORT = process.env.PORT;
 mongoose

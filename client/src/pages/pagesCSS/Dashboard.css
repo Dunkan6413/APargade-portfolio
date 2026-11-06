@@ -1,0 +1,215 @@
+.admin-page {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  width: min(1000px, 86%);
+  margin: 0 auto;
+  padding: 9rem 0 6rem; /* haut : laisse la place à la navbar fixe */
+  min-height: 70vh;
+  box-sizing: border-box;
+}
+
+.admin-title {
+  width: fit-content;
+  margin: 0;
+  padding-bottom: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #f5c451;
+  border-bottom: 3px solid #f5c451;
+}
+
+.admin-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+  padding: 2.5rem 3rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(242, 154, 65, 0.14),
+    rgba(242, 154, 65, 0.03)
+  );
+  border: 1px solid rgba(240, 178, 107, 0.35);
+  border-radius: 40px;
+}
+
+.admin-card-title {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #f5c451;
+}
+
+.admin-button {
+  display: inline-block;
+  padding: 10px 30px;
+  background: #e8934a;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1b2a4a;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.admin-button:hover {
+  background: #f5a95f;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 800px) {
+  .admin-page {
+    padding-top: 7rem;
+  }
+
+  .admin-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* ===== Formulaire ===== */
+button.admin-button {
+  border: 0;
+  cursor: pointer;
+}
+
+button.admin-button:disabled {
+  opacity: 0.6;
+  cursor: default;
+  transform: none;
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.9rem;
+  color: #f0b26b;
+}
+
+.admin-field input {
+  padding: 12px 20px;
+  background: rgba(10, 10, 30, 0.45);
+  border: 1px solid rgba(240, 178, 107, 0.35);
+  border-radius: 999px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  color: #ffffff;
+  transition: border-color 0.2s ease;
+}
+
+.admin-field input:focus {
+  outline: none;
+  border-color: #f5c451;
+}
+
+.admin-error {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.9rem;
+  color: #ff8a7a;
+}
+
+.admin-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.admin-button--ghost {
+  background: transparent;
+  border: 1px solid #e8934a;
+  color: #f0b26b;
+}
+
+.admin-button--ghost:hover {
+  background: rgba(232, 147, 74, 0.15);
+}
+
+/* ===== Zone de glisser-déposer ===== */
+.dropzone {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  padding: 24px;
+  box-sizing: border-box;
+  background: rgba(10, 10, 30, 0.45);
+  border: 2px dashed rgba(240, 178, 107, 0.45);
+  border-radius: 32px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.dropzone:hover,
+.dropzone:focus-visible,
+.dropzone.is-dragging {
+  outline: none;
+  border-color: #f5c451;
+  background: rgba(242, 154, 65, 0.12);
+}
+
+.dropzone.has-preview {
+  padding: 0;
+  border-style: solid;
+}
+
+.dropzone-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  text-align: center;
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  color: #f5c451;
+}
+
+.dropzone-text span {
+  font-size: 0.85rem;
+  color: #f0b26b;
+}
+
+.dropzone-preview {
+  display: block;
+  width: 100%;
+  max-height: 360px;
+  object-fit: contain;
+}
+
+.dropzone-remove {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 6px 16px;
+  background: rgba(27, 42, 74, 0.85);
+  border: 1px solid #e8934a;
+  border-radius: 999px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #f0b26b;
+  cursor: pointer;
+}
+
+.dropzone-remove:hover {
+  background: #e8934a;
+  color: #1b2a4a;
+}
