@@ -21,7 +21,7 @@ const authRoute = require("./routes/auth.route");
 const portfolioRoute = require("./routes/portfolio.route");
 
 // API route definition
-app.use("/user", authRoute);
+app.use("/auth", authRoute);
 app.use("/port", portfolioRoute);
 
 const PORT = process.env.PORT;

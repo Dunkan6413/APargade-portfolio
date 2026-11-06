@@ -26,7 +26,7 @@ export default function Register() {
 			formData.append('tel', tel)
 			formData.append('birthDate', birthDate)
 			
-			const response = await fetch(`${import.meta.env.VITE_BACK_URL}/user/register`,{
+			const response = await fetch(`${import.meta.env.VITE_BACK_URL}/auth/register`,{
 				method: 'POST',
 				body: formData
 			})
@@ -36,7 +36,7 @@ export default function Register() {
             console.log('BODY:', text)
 
 			if (!response.ok) {
-				console.log(`${import.meta.env.VITE_BACK_URL}/user/register`);
+				console.log(`${import.meta.env.VITE_BACK_URL}/auth/register`);
 				throw new Error("Couldn't complete registering")
 			}
 			const data = await response.json()
