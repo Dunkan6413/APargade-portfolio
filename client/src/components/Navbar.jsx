@@ -26,19 +26,25 @@ export default function Navbar() {
 }, [location]);
 
   async function handleLogout() {
-    try {
-      const response = await fetch(`${import.meta.env.VITE_BACK_URL}/auth/logout`, {
-        method: 'POST',
-        credentials: 'include'
-      });
+  try {
+    const response = await fetch(`${import.meta.env.VITE_BACK_URL}/auth/logout`, {
+      method: "POST",
+      credentials: "include",
+    });
 
-      if (response.ok) {
-        window.location.href = '/'
-      }
-    } catch(err) {
-      console.error("Disconnect error :", err);
+    console.log("LOGOUT STATUS:", response.status);
+
+    if (!response.ok) {
+      console.error("Logout failed:", await response.text());
+      return;
     }
+
+    setIsLogged(false);
+    window.location.href = "/";
+  } catch (err) {
+    console.error("Disconnect error :", err);
   }
+}
 
   return (
     <nav className='navbar'>
