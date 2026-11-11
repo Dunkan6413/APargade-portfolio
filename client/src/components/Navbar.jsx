@@ -7,10 +7,23 @@ export default function Navbar() {
     const [isLogged, setIsLogged] = useState(false);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_BACK_URL}/auth/me`, {credentials: 'include'})
-      .then(res => setIsLogged(res.ok))
-      .catch(() => setIsLogged(false));
-  }, [location])
+  let cancelled = false;
+
+  fetch(`${import.meta.env.VITE_BACK_URL}/auth/me`, {
+    credentials: "include",
+    cache: "no-store",
+  })
+    .then((res) => {
+      if (!cancelled) setIsLogged(res.ok);
+    })
+    .catch(() => {
+      if (!cancelled) setIsLogged(false);
+    });
+
+  return () => {
+    cancelled = true;
+  };
+}, [location]);
 
   async function handleLogout() {
     try {
