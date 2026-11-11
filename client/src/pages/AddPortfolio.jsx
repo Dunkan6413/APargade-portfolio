@@ -29,9 +29,9 @@ export default function AddPortfolio() {
     }
   }
 
-//   useEffect(() => {
-//     getAdmin();
-//   }, []);
+  useEffect(() => {
+    getAdmin();
+  }, []);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -75,7 +75,7 @@ export default function AddPortfolio() {
     }
   }
 
-//   if (!authorized) return null;
+  if (!authorized) return null;
 
   return (
     <div className="admin-page">

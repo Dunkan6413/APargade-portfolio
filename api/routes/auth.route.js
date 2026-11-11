@@ -122,6 +122,7 @@ router.get("/admin", verifyToken, async (req, res) => {
   if (req.user.role !== "admin") {
     return res.status(403).json({ message: "Access forbidden" });
   }
+  res.status(200).json({ ok: true });
 });
 
 router.get("/me", verifyToken, (req, res) => {
