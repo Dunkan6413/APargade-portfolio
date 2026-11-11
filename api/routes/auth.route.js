@@ -129,4 +129,8 @@ router.get("/me", verifyToken, (req, res) => {
   return res.status(200).json({ user: req.user });
 });
 
+router.get('/health', (req, res) => {
+  res.status(200).send('ok');
+});
+
 module.exports = router;
