@@ -7,6 +7,14 @@ const verifyToken = require("../middleware/verifyToken");
 
 const router = express.Router();
 
+const isProd = process.env.NODE_ENV === "production";
+
+const cookieOptions = {
+  httpOnly: true,
+  secure: isProd,
+  sameSite: isProd ? "none" : "lax",
+};
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "uploads/");
@@ -92,9 +100,8 @@ router.post("/login-cookie", async (req, res) => {
     });
 
     res.cookie("token", token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
+      ...cookieOptions,
+      maxAge: 4 * 60 * 60 * 1000,
     });
 
     return res.status(200).json({
@@ -109,12 +116,7 @@ router.post("/login-cookie", async (req, res) => {
 });
 
 router.post("/logout", (req, res) => {
-  res.cookie("token", "", {
-    httpOnly: true,
-    expires: new Date(0),
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "lax",
-  });
+  res.clearCookie("token", cookieOptions);
   return res.status(200).json({ message: "Disconnected" });
 });
 

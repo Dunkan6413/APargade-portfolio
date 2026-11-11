@@ -84,3 +84,9 @@
 .login-link:hover {
   text-decoration: underline;
 }
+
+.login-error {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #ff8a7a;
+}

@@ -7,10 +7,12 @@ const BASE_URL = `${import.meta.env.VITE_BACK_URL}/auth/login-cookie`
 export default function Login() {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+    const [error, setError] = useState("")
     const navigate = useNavigate()
 
     async function handleSubmit(e) {
         e.preventDefault()
+        setError("")
         try {
             const response = await fetch(BASE_URL, {
                 method: 'POST',
@@ -37,6 +39,7 @@ export default function Login() {
             window.location.href = '/'
         } catch (err) {
             console.error("Erreur de connexion :", err)
+            setError("Identifiants invalides ou serveur injoignable.")
         }
     }
 
@@ -60,6 +63,7 @@ export default function Login() {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                 />
+                {error && <p className="login-error">{error}</p>}
                 <button type="submit">Connexion</button>
                 <Link className="login-link" to="/register">Créer un compte</Link>
             </form>
