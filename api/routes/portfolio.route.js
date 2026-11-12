@@ -13,9 +13,19 @@ const storage = multer.diskStorage({
     cb(null, file.originalname);
   },
 });
-const upload = multer({ storage });
+const upload = multer({ 
+  storage,
+  fileFilter: (req, file, cb) => {
+    const allowed =  ["image/jpeg", "image/png", "image/webp", "image/gif"];
+    if (allowed.includes(file.mimetype)) {
+      cb(null, true);
+    } else {
+      cb(new Error("Format d'image non autorisé"));
+    }
+  }
+});
 
-router.post("/addPortfolio", upload.single("image"), verifyToken, async (req, res) => {
+router.post("/addPortfolio", verifyToken, upload.single("image"), async (req, res) => {
   try {
     const imgFile = req.file;
     const { name, url } = req.body;
