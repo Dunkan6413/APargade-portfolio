@@ -14,27 +14,27 @@ export const socialLinks = {
   },
   linkedin: {
     icon: FaLinkedinIn,
-    url: "https://linkedin.com/in/tonprofil",
+    url: "https://www.linkedin.com/in/angélina-pargade-942296293/",
     label: "LinkedIn",
   },
   behance: {
     icon: FaBehance,
-    url: "https://behance.net/tonprofil",
+    url: "https://www.behance.net/ang__hell",
     label: "Behance",
   },
   youtube: {
     icon: FaYoutube,
-    url: "https://youtube.com/@tonprofil",
+    url: "https://www.youtube.com/@ang-hell6627",
     label: "YouTube",
   },
   artstation: {
     icon: SiArtstation,
-    url: "https://www.artstation.com/tonprofil",
+    url: "https://www.artstation.com/ang__hell",
     label: "ArtStation",
   },
   linktree: {
     icon: SiLinktree,
-    url: "https://linktr.ee/tonprofil",
+    url: "https://linktr.ee/Ang__Hell",
     label: "Linktree",
   },
 };
