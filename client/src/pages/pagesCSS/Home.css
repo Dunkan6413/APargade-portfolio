@@ -82,7 +82,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
 }
 
 .home-about-title {
@@ -91,8 +91,10 @@
   font-weight: 700;
   font-family: "Inter", sans-serif;
   color: #f5c451;
-  padding-bottom: 10px;
-  border-bottom: 3px solid #f5c451;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #F29A41;
+  padding-top: 10px;
+  border-top: 3px solid #F7C63F;
 }
 
 .home-about-avatar {

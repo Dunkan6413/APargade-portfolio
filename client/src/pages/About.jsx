@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import "./pagesCSS/About.css";
 import separation from "../assets/Rectangle 82.svg";
 import AnimatedLayout from "../components/AnimatedLayout";
-import mosaic from "../assets/mosaic.png"
-import animation from "../assets/GROSSEWARHclean-crop.gif"
-import phoenix from "../assets/Fénix_Plan_de_travail_1.svg"
+import mosaic from "../assets/mosaic.png";
+import animation from "../assets/GROSSEWARHclean-crop.gif";
+import phoenix from "../assets/Fénix_Plan_de_travail_1.svg";
 
 // Cadre à remplir : passer une image importée dans `src`, sinon un cadre gris s'affiche.
 // ex: import illu1 from "../assets/about-1.png";  puis  const storyImages = [illu1, ...]
@@ -77,8 +77,8 @@ export default function About() {
 
             <div className="about-story-text">
               <p>
-                J'ai toujours eu des facilités en ce qui concerne
-                l'illustration et la créativité.
+                J'ai toujours eu des facilités en ce qui concerne l'illustration
+                et la créativité.
               </p>
               <p>
                 Ma première ambition était de devenir dessinatrice, puis cette
@@ -86,8 +86,8 @@ export default function About() {
                 animés.
               </p>
               <p>
-                Aujourd'hui, j'ai toujours l'espoir de pouvoir un jour
-                présenter ma propre série animée...
+                Aujourd'hui, j'ai toujours l'espoir de pouvoir un jour présenter
+                ma propre série animée...
               </p>
             </div>
           </div>
@@ -107,25 +107,27 @@ export default function About() {
           </ul>
         </section>
 
-        <section className="about-approach">
-          <span className="about-ribbon" aria-hidden="true" />
-          <div className="about-approach-inner">
-            <Frame src={approachImage} className="about-bg" />
+        <div className="about-approach-row">
+          <section className="about-approach">
+            <span className="about-ribbon" aria-hidden="true" />
+            <div className="about-approach-inner">
+              <Frame src={approachImage} className="about-bg" />
 
-            <p className="about-approach-text">
-              Au travers d'univers vivants et authentiques, j'ai le désir
-              d'offrir à mes clients une adaptation de leurs idées en projet
-              clair et concret.
-              <br />
-              Où il s'agit de transmettre une émotion, un message, les
-              possibilités sont nombreuses à l'aide d'un trait spontané.
-            </p>
+              <p className="about-approach-text">
+                Au travers d'univers vivants et authentiques, j'ai le désir
+                d'offrir à mes clients une adaptation de leurs idées en projet
+                clair et concret.
+                <br />
+                Où il s'agit de transmettre une émotion, un message, les
+                possibilités sont nombreuses à l'aide d'un trait spontané.
+              </p>
+            </div>
+          </section>
 
-            <Link to="/prestation" className="about-button">
-              Prestations
-            </Link>
-          </div>
-        </section>
+          <Link to="/prestation" className="about-button">
+            Prestations
+          </Link>
+        </div>
 
         <section className="about-universe">
           <header className="about-universe-head">
@@ -166,10 +168,10 @@ export default function About() {
                 elles donnent un aspect plus abouti et recherché.
               </p>
               <p>
-                J'aime mes croquis et travaux finalisés, j'informe sur
-                l'envers du décor de mes prestations. J'attache beaucoup
-                d'importance à ce rapprochement avec le public qui rend le tout
-                authentique et identifiable.
+                J'aime mes croquis et travaux finalisés, j'informe sur l'envers
+                du décor de mes prestations. J'attache beaucoup d'importance à
+                ce rapprochement avec le public qui rend le tout authentique et
+                identifiable.
               </p>
             </div>
 
