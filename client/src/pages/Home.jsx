@@ -8,14 +8,17 @@ import avatar from "../assets/pdp.png";
 import ribbon from "../assets/Group 30.svg";
 import AnimatedLayout from "../components/AnimatedLayout";
 import SocialLinks from "../components/SocialLinks";
+import illustration from "../assets/bonne_aventure.png";
+import graphisme from "../assets/piste-à-finaliser.png";
+import animation from "../assets/capture_ecran.png";
 
 // Pour remplir un cadre : importer l'image, puis la passer dans `image`.
 // ex: import illustration from "../assets/presta-illustration.png";
 //     { title: "Illustration", image: illustration, ... }
 const prestations = [
-  { title: "Illustration", image: null, alt: "Exemple d'illustration" },
-  { title: "Graphisme", image: null, alt: "Exemple de graphisme" },
-  { title: "Animation", image: null, alt: "Exemple d'animation" },
+  { title: "Illustration", image: illustration, alt: "Exemple d'illustration" },
+  { title: "Graphisme", image: graphisme, alt: "Exemple de graphisme" },
+  { title: "Animation", image: animation, alt: "Exemple d'animation" },
 ];
 
 export default function Home() {
@@ -56,18 +59,18 @@ export default function Home() {
             <img src={ribbon} alt="" className="home-about-ribbon" />
 
             <div className="home-about-content">
-              <p>
+              <p id="title-creator">
                 Créatrice de personnages en tout genres et de recherches
-                visuelles,{" "}
+                visuelles... {" "}
                 <em>
                   (Plus communément appelé{" "}
                   <strong>Character Design / Concept Art</strong>)
                 </em>{" "}
-                j'offre des prestations adaptées à une demande grâce à un
-                univers graphique qui m'est propre, avec une affinité pour le
-                style cartoon.
               </p>
               <p>
+                J'offre des prestations adaptées à chaque demande grâce à un
+                univers graphique qui m'est propre, avec une affinité pour le
+                style cartoon.
                 Je produis des réalisations courtes pour des projets en{" "}
                 <strong>animation 2D</strong>.
               </p>
@@ -84,6 +87,10 @@ export default function Home() {
               </div>
             </div>
           </div>
+          <SocialLinks
+            names={["instagram", "behance", "youtube", "artstation"]}
+            className="home-about-social"
+          />
         </section>
 
         <section className="home-presta-section">
@@ -92,9 +99,7 @@ export default function Home() {
           <ul className="home-presta-list">
             {prestations.map(({ title, image, alt }) => (
               <li key={title} className="home-presta-card">
-                <div
-                  className={`home-presta-frame${image ? "" : " is-empty"}`}
-                >
+                <div className={`home-presta-frame${image ? "" : " is-empty"}`}>
                   {image && <img src={image} alt={alt} />}
                 </div>
                 <Link to="/prestation" className="home-presta-button">

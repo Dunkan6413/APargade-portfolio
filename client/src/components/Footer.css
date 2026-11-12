@@ -59,12 +59,12 @@
   font-family: "Inter", sans-serif;
   font-size: 1.7rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #f0b26b;
   text-decoration: none;
 }
 
 .footer-linktree:hover {
-  color: #f0b26b;
+  color: #ffffff;
 }
 
 .footer-social-list {

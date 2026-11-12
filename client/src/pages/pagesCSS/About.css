@@ -82,7 +82,7 @@
   padding: 8px 28px;
   background: #e8934a;
   font-family: "Inter", sans-serif;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #1b2a4a;
   border-radius: 999px;
@@ -197,6 +197,7 @@
   overflow: hidden;
   font-family: "Inter", sans-serif;
   font-size: clamp(0.62rem, 1.05vw, 0.9rem);
+  margin-left: 1.25vw;
   line-height: 1.6;
   color: #f0b26b;
 }
@@ -226,12 +227,12 @@
   grid-template-columns: 1fr 1.4fr;
   gap: 3rem;
   align-items: center;
-  width: min(780px, 86%);
+  width: min(900px, 86%);
   margin: 0 auto;
   font-family: "Inter", sans-serif;
-  font-size: 0.85rem;
+  font-size: 1rem;
   line-height: 1.5;
-  color: #f0b26b;
+  color: #F7C63F;
 }
 
 .about-diplomas .about-title {
@@ -253,18 +254,15 @@
   flex-direction: column;
 }
 
-.about-diplomas-list strong {
-  color: #ffffff;
-}
-
 /* Ruban 2 : approche (déborde à gauche) */
 .about-approach {
   --h: clamp(260px, 38vw, 640px);
   position: relative;
   z-index: 1;
-  width: 80%;
+  width: 70%;
   height: var(--h);
   margin: 8vw 0;
+  margin-left: -4vw;
   overflow: hidden;
 }
 
@@ -287,7 +285,7 @@
   padding-left: 22%;
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
-  font-size: clamp(0.62rem, 1.05vw, 0.9rem);
+  font-size: 1vw;
   line-height: 1.6;
   color: #f0b26b;
 }
@@ -333,7 +331,7 @@
   align-items: center;
   margin-bottom: 5rem;
   font-family: "Inter", sans-serif;
-  font-size: 0.85rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: #f0b26b;
 }
@@ -350,10 +348,6 @@
   margin-bottom: 0;
 }
 
-.about-feature-text strong {
-  color: #ffffff;
-}
-
 .about-figure {
   display: flex;
   flex-direction: column;
@@ -362,8 +356,8 @@
 }
 
 .about-figure .about-frame {
-  width: 240px;
-  height: 300px;
+  width: 340px;
+  height: auto;
   border-radius: 24px;
 }
 

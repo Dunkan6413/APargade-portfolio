@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import "./pagesCSS/About.css";
 import separation from "../assets/Rectangle 82.svg";
 import AnimatedLayout from "../components/AnimatedLayout";
+import mosaic from "../assets/mosaic.png"
+import animation from "../assets/GROSSEWARHclean-crop.gif"
+import phoenix from "../assets/Fénix_Plan_de_travail_1.svg"
 
 // Cadre à remplir : passer une image importée dans `src`, sinon un cadre gris s'affiche.
 // ex: import illu1 from "../assets/about-1.png";  puis  const storyImages = [illu1, ...]
@@ -15,23 +18,23 @@ function Frame({ src, alt = "", className = "" }) {
 }
 
 // Collage du 1er et 2e ruban
-const storyImage = null;
-const approachImage = null;
+const storyImage = mosaic;
+const approachImage = mosaic;
 
 // Illustrations de "Mon univers"
-const universeImage = null; // personnage violet
-const graphismImage = null; // illustration rose
+const universeImage = animation;
+const graphismImage = phoenix;
 
 const diplomas = [
   {
     years: "2023-2025",
-    title: "Bachelor Animation 2D/3D/VFX,",
-    school: "(Bac +3) - Strudi",
+    title: "Bachelor Animation 2D/3D/VFX",
+    school: "(Bac +3) - Studi",
   },
   {
     years: "2022-2023",
     title: "Webdesign - Graphiste multimédia",
-    school: "(Bac +2) - Strudi",
+    school: "(Bac +2) - Studi",
   },
   {
     years: "2018-2021",
@@ -84,7 +87,7 @@ export default function About() {
               </p>
               <p>
                 Aujourd'hui, j'ai toujours l'espoir de pouvoir un jour
-                présenter ma propre série animée.
+                présenter ma propre série animée...
               </p>
             </div>
           </div>
@@ -127,15 +130,12 @@ export default function About() {
         <section className="about-universe">
           <header className="about-universe-head">
             <h2 className="about-title">Mon univers</h2>
-            <Link to="/portfolio" className="about-button">
-              Portfolio
-            </Link>
           </header>
 
           <article className="about-feature">
             <div className="about-figure">
               <Frame src={universeImage} alt="Personnage violet" />
-              <Link to="/prestation" className="about-button">
+              <Link to="/portfolio" className="about-button">
                 Animation et illustration
               </Link>
             </div>
@@ -175,7 +175,7 @@ export default function About() {
 
             <div className="about-figure">
               <Frame src={graphismImage} alt="Illustration rose" />
-              <Link to="/prestation" className="about-button">
+              <Link to="/portfolio" className="about-button">
                 Graphisme
               </Link>
             </div>
