@@ -40,15 +40,15 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  border: 2px solid #f0b26b;
+  border: 2px solid #F7C63F;
   border-radius: 8px;
-  color: #f0b26b;
+  color: #F7C63F;
   font-size: 1.1rem;
   transition: background 0.2s ease, color 0.2s ease;
 }
 
 .home-social a:hover {
-  background: #f0b26b;
+  background: #F7C63F;
   color: #1b1a3a;
 }
 
@@ -92,9 +92,9 @@
   font-family: "Inter", sans-serif;
   color: #f5c451;
   padding-bottom: 15px;
-  border-bottom: 3px solid #F29A41;
+  border-bottom: 6px solid #F29A41;
   padding-top: 10px;
-  border-top: 3px solid #F7C63F;
+  border-top: 6px solid #F7C63F;
 }
 
 .home-about-avatar {
@@ -139,6 +139,7 @@
   width: 110%;
   height: auto;
   pointer-events: none;
+  opacity: 30%;
 }
 
 .home-about-content {
@@ -256,7 +257,9 @@
   font-family: "Inter", sans-serif;
   color: #f5c451;
   padding-bottom: 10px;
-  border-bottom: 3px solid #f5c451;
+  border-bottom: 6px solid #F29A41;
+  padding-top: 10px;
+  border-top: 6px solid #F7C63F;
 }
 
 .home-presta-list {
