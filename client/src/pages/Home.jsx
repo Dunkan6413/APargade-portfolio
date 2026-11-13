@@ -29,7 +29,7 @@ export default function Home() {
           <img src={logo} alt="Logo" className="home-logo" />
 
           <p className="home-tagline">
-            Animation 2D · Illustration · Graphisme
+            Animation 2D - Illustration - Graphisme
           </p>
 
           <SocialLinks
