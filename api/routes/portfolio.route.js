@@ -5,6 +5,8 @@ const multer = require("multer");
 
 const router = express.Router();
 
+const path = require("path")
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "uploads/");
@@ -13,36 +15,40 @@ const storage = multer.diskStorage({
     cb(null, file.originalname);
   },
 });
-const upload = multer({ 
+const upload = multer({
   storage,
   fileFilter: (req, file, cb) => {
-    const allowed =  ["image/jpeg", "image/png", "image/webp", "image/gif"];
-    if (allowed.includes(file.mimetype)) {
-      cb(null, true);
-    } else {
-      cb(new Error("Format d'image non autorisé"));
+    var ext = path.extname(file.originalname);
+    if (ext !== ".png" && ext !== ".jpg" && ext !== ".gif" && ext !== ".jpeg") {
+      return cb(new Error("Only images are allowed"));
     }
-  }
+    cb(null, true);
+  },
 });
 
-router.post("/addPortfolio", verifyToken, upload.single("image"), async (req, res) => {
-  try {
-    const imgFile = req.file;
-    const { name, url } = req.body;
-    console.log(req.body);
+router.post(
+  "/addPortfolio",
+  verifyToken,
+  upload.single("image"),
+  async (req, res) => {
+    try {
+      const imgFile = req.file;
+      const { name, url } = req.body;
+      console.log(req.body);
 
-    const imgName = imgFile ? imgFile.filename : null;
+      const imgName = imgFile ? imgFile.filename : null;
 
-    await Portfolio.create({
-      name,
-      url,
-      image: imgName,
-    });
-    res.status(201).json({ message: "Portfolio created" });
-  } catch (err) {
-    res.status(500).json({ message: err });
-  }
-});
+      await Portfolio.create({
+        name,
+        url,
+        image: imgName,
+      });
+      res.status(201).json({ message: "Portfolio created" });
+    } catch (err) {
+      res.status(500).json({ message: err });
+    }
+  },
+);
 
 router.get("/portfolios", async (req, res) => {
   try {

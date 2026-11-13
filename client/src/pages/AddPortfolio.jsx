@@ -44,7 +44,6 @@ export default function AddPortfolio() {
 
     setSending(true);
     try {
-      // Envoi en multipart : pas de Content-Type, le navigateur le gère
       const formData = new FormData();
       formData.append("name", name);
       formData.append("url", url);
@@ -69,7 +68,7 @@ export default function AddPortfolio() {
       navigate("/admin");
     } catch (err) {
       console.log(err);
-      setError("Impossible d'ajouter cet élément. Réessaie.");
+      setError("Impossible d'ajouter cet élément.");
     } finally {
       setSending(false);
     }
