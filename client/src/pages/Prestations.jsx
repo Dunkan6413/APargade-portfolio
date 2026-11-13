@@ -57,15 +57,15 @@ export default function Prestations() {
               </li>
               <li>
                 Les délais de réponses ne doivent pas dépasser + de 2 semaines,
-                au dela de ces délais, la commande sera annulée.
+                au dela de ce délais, la commande sera annulée.
               </li>
               <li>L'engagement doit être signé par le client</li>
               <li>
-                Nature du projet, est ce un projet à but non lucratif,
-                commercial, autre?
+                Spécifier la nature du projet : est-ce un projet à but non lucratif,
+                commercial, autre ?
               </li>
               <li>
-                Me créditer/cité (trouver une manière de mieux le formuler)
+                Me créditer lors de la réutilisation de l'oeuvre
               </li>
             </ul>
 
