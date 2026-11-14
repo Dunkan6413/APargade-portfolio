@@ -9,10 +9,11 @@
 }
 
 .contact-title {
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-size: 3.5em;
+  margin: 0;
   color: #F29A41;
+  font-size: 2rem;
+  font-family: "Manrope", sans-serif;
+  letter-spacing: 15%;
 }
 
 .contact-hero {

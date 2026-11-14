@@ -16,7 +16,7 @@ export default function Contact() {
   return (
     <AnimatedLayout>
       <div className="contact-hero">
-        <h1 className="contact-title">Contact</h1>
+        <p className="contact-title">Contact</p>
 
         <main className="contact-main">
           <form onSubmit={handleSubmit} className="contact-form">
