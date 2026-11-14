@@ -45,10 +45,10 @@
 
 .presta-tagline {
   margin: 32px 0 0;
+  color: #F29A41;
+  font-size: 2rem;
   font-family: "Manrope", sans-serif;
-  font-size: 1.55rem;
-  letter-spacing: 0.12em;
-  color: #f0b26b;
+  letter-spacing: 15%;
 }
 
 .presta-arrow {

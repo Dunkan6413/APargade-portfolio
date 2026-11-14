@@ -47,6 +47,14 @@
   width: 100%;
   background: #e07030;
 }
+
+.nav-admin-group {
+  padding-left: 40px;
+}
+.nav-admin-group .nav-link{
+  padding-right: 20px;
+}
+
 /* Contenu principal */
 .main-content {
   position: relative;

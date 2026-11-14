@@ -26,10 +26,10 @@
 
 .about-tagline {
   margin: 0;
-  color: #f0b26b;
+  color: #F29A41;
+  font-size: 2rem;
   font-family: "Manrope", sans-serif;
-  font-size: 1.05rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 15%;
 }
 
 .about-arrow {

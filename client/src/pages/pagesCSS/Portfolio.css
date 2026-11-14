@@ -92,10 +92,10 @@
 
 .portfolio-tagline {
   margin: 0;
-  font-family: "Manrope", sans-serif;
-  font-size: 1.3rem;
-  letter-spacing: 0.15em;
   color: #F29A41;
+  font-size: 2rem;
+  font-family: "Manrope", sans-serif;
+  letter-spacing: 15%;
 }
 
 /* Mobile / petite tablette */
