@@ -39,7 +39,6 @@ router.post("/register", upload.single("image"), async (req, res) => {
       tel,
       birthDate,
     } = req.body;
-    console.log(req.body);
 
     const user = await User.findOne({ email });
     if (user) {
@@ -69,7 +68,6 @@ router.post("/register", upload.single("image"), async (req, res) => {
 
 router.post("/login-cookie", async (req, res) => {
   try {
-    console.log(req.body);
     const { username, password } = req.body;
 
     if (!username || !password) {
@@ -82,7 +80,6 @@ router.post("/login-cookie", async (req, res) => {
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
-    console.log(isMatch);
     if (!isMatch) {
       return res.status(400).json({ message: "Identifiants invalides" });
     }
