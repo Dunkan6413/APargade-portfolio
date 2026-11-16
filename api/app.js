@@ -19,10 +19,12 @@ app.use("/uploads", express.static("uploads"));
 // API route imports
 const authRoute = require("./routes/auth.route");
 const portfolioRoute = require("./routes/portfolio.route");
+const mailerRoute = require("./routes/mailer.route");
 
 // API route definition
 app.use("/auth", authRoute);
 app.use("/port", portfolioRoute);
+app.use("/mailer", mailerRoute);
 
 const PORT = process.env.PORT;
 mongoose

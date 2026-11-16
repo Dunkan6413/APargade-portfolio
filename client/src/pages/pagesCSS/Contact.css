@@ -92,3 +92,17 @@
 .contact-form button:hover {
   background-color: #e88a35;
 }
+
+.contact-error {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.9rem;
+  color: #ff8a7a;
+}
+
+.contact-success {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.9rem;
+  color: #F29A41;
+}
