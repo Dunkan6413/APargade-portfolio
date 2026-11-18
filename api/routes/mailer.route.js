@@ -59,10 +59,10 @@ async function sendContactMail(lastName, firstName, email, content) {
 //     }
 // }
 
-router.post('/contact', async(req, res) => {
-    const { lastName, firstName, email, content } = req.body;
-    sendContactMail(lastName, firstName, email, content);
-    res.status(200).json({ message: "Mail envoyé" });
-})
+// router.post('/contact', async(req, res) => {
+//     const { lastName, firstName, email, content } = req.body;
+//     sendContactMail(lastName, firstName, email, content);
+//     res.status(200).json({ message: "Mail envoyé" });
+// })
 
 module.exports = router;

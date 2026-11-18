@@ -1,38 +1,29 @@
 .contact-hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  column-gap: 24px;
+  row-gap: 24px;
+  align-content: start;
   margin-top: 100px;
-  gap: 24px;
+  min-height: 100vh;
+  padding: 2rem;
   text-align: center;
-  padding-top: 30vh;
 }
 
 .contact-title {
-  margin: 0;
-  color: #F29A41;
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin: 0 0 2rem;
+  color: #f5a742;
   font-size: 2rem;
   font-family: "Manrope", sans-serif;
   letter-spacing: 15%;
 }
 
-.contact-hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-}
-
-.contact-title {
-  color: #f5a742;
-  margin-bottom: 2rem;
-}
-
 .contact-main {
+  grid-column: 2;
   display: flex;
   justify-content: center;
-  width: 100%;
 }
 
 .contact-form {
@@ -105,4 +96,91 @@
   font-family: "Manrope", sans-serif;
   font-size: 0.9rem;
   color: #F29A41;
+}
+
+/* Champs et bouton désactivés */
+.contact-form input:disabled,
+.contact-form textarea:disabled {
+  background-color: #b9b5c4;
+  border-color: #6b6280;
+  color: #6b6280;
+  cursor: not-allowed;
+}
+
+.contact-form button:disabled {
+  background-color: #6b6280;
+  color: #2a2440;
+  cursor: not-allowed;
+}
+
+.contact-form button:disabled:hover {
+  background-color: #6b6280;
+}
+
+/* Encadré d'information, à droite du formulaire */
+.contact-info {
+  grid-column: 3;
+  grid-row: 2;
+  justify-self: start;
+  align-self: start;
+  width: 320px;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 1.2rem 1.5rem;
+  background-color: #211c33;
+  border: 1px dashed #F29A41;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.contact-info-title {
+  margin: 0 0 0.5rem;
+  color: #F29A41;
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.contact-info-text {
+  margin: 0;
+  color: #f5a742;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.contact-info-mail {
+  display: inline-block;
+  margin: 1rem 0 0;
+  padding: 0.5rem 1rem;
+  background-color: #696969;
+  border: 1px solid #d94f2b;
+  border-radius: 6px;
+  color: #f5a742;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.5;
+  opacity: 1;
+}
+
+/* Écran trop étroit : l'encadré repasse sous le formulaire */
+@media (max-width: 1300px) {
+  .contact-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-main,
+  .contact-info {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .contact-info {
+    justify-self: center;
+    width: 100%;
+    max-width: 540px;
+  }
 }
