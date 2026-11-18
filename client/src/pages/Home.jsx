@@ -12,9 +12,6 @@ import illustration from "../assets/bonne_aventure.png";
 import graphisme from "../assets/piste-à-finaliser.png";
 import animation from "../assets/capture_ecran.png";
 
-// Pour remplir un cadre : importer l'image, puis la passer dans `image`.
-// ex: import illustration from "../assets/presta-illustration.png";
-//     { title: "Illustration", image: illustration, ... }
 const prestations = [
   { title: "Illustration", image: illustration, alt: "Exemple d'illustration" },
   { title: "Graphisme", image: graphisme, alt: "Exemple de graphisme" },
@@ -47,6 +44,7 @@ export default function Home() {
         </section>
 
         <section className="home-about-section">
+          <div className="home-about-band" aria-hidden="true" />
           <div className="home-about-left">
             <h2 className="home-about-title">Qui suis-je ?</h2>
             <img src={avatar} alt="" className="home-about-avatar" />
@@ -61,7 +59,7 @@ export default function Home() {
             <div className="home-about-content">
               <p id="title-creator">
                 Créatrice de personnages en tout genres et de recherches
-                visuelles... {" "}
+                visuelles...{" "}
                 <em>
                   (Plus communément appelé{" "}
                   <strong>Character Design / Concept Art</strong>)
@@ -70,9 +68,8 @@ export default function Home() {
               <p>
                 J'offre des prestations adaptées à chaque demande grâce à un
                 univers graphique qui m'est propre, avec une affinité pour le
-                style cartoon.
-                Je produis des réalisations courtes pour des projets en{" "}
-                <strong>animation 2D</strong>.
+                style cartoon. Je produis des réalisations courtes pour des
+                projets en <strong>animation 2D</strong>.
               </p>
               <p>
                 Mes compétences en <strong>graphisme</strong> me permettent de
@@ -94,6 +91,10 @@ export default function Home() {
         </section>
 
         <section className="home-presta-section">
+          <div
+            className="home-presta-band-mirror"
+            aria-hidden="true"
+          />
           <h2 className="home-presta-title">Prestations</h2>
 
           <ul className="home-presta-list">
