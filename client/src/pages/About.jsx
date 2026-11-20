@@ -136,7 +136,7 @@ export default function About() {
 
           <article className="about-feature">
             <div className="about-figure">
-              <Frame src={universeImage} alt="Personnage violet" />
+              <Frame src={universeImage} alt="Größenwahn" />
               <Link to="/portfolio" className="about-button">
                 Animation et illustration
               </Link>
@@ -176,7 +176,7 @@ export default function About() {
             </div>
 
             <div className="about-figure">
-              <Frame src={graphismImage} alt="Illustration rose" />
+              <Frame src={graphismImage} alt="Fénix" />
               <Link to="/portfolio" className="about-button">
                 Graphisme
               </Link>
