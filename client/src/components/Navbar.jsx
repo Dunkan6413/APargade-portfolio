@@ -5,6 +5,7 @@ import { Link, useLocation } from 'react-router-dom'
 export default function Navbar() {
     const location = useLocation();
     const [isLogged, setIsLogged] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
   let cancelled = false;
@@ -24,6 +25,10 @@ export default function Navbar() {
     cancelled = true;
   };
 }, [location]);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
 
   async function handleLogout() {
   try {
@@ -47,7 +52,18 @@ export default function Navbar() {
 }
 
   return (
-    <nav className='navbar'>
+    <nav className={`navbar${isOpen ? " is-open" : ""}`}>
+        <button
+          type="button"
+          className="nav-burger"
+          aria-label="Menu"
+          aria-expanded={isOpen}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
         <Link to="/" className={`nav-link ${location.pathname === "/" ? "active" : ""}`}>Accueil</Link>
         <Link to="/about" className={`nav-link ${location.pathname === "/about" ? "active" : ""}`}>À propos</Link>
         <Link to="/prestation" className={`nav-link ${location.pathname === "/prestation" ? "active" : ""}`}>Prestations</Link>
